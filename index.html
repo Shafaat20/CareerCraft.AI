@@ -1,0 +1,1219 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+      
+      <!-- {headerScripts} -->
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                primary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Base Styles -->
+      <style>
+      * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Webkit browsers like Chrome, Safari, newer Edge */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        /* Remove tap highlight on mobile */
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Improve text rendering */
+        body {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus outline styles */
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
+        }
+      </style>
+
+      <!-- Enhanced Image Handler -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          // Watch for dynamically added images
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        // Performance monitoring
+        if ('performance' in window && 'PerformanceObserver' in window) {
+          // Create performance observer
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+                // console.log(`LCP: ${entry.startTime}ms`);
+              }
+              if (entry.entryType === 'first-input') {
+                // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+              }
+              if (entry.entryType === 'layout-shift') {
+                // console.log(`CLS: ${entry.value}`);
+              }
+            });
+          });
+
+          // Observe performance metrics
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+          // Log basic performance metrics
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
+        }
+
+        // Handle offline/online status
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative ">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+
+   </body>
+</html><element id="d5148f4c-1078-4987-b974-2d5fe0459251" data-section-id="d5148f4c-1078-4987-b974-2d5fe0459251">
+
+
+                <htmlcode id="el-9nss6y1u">
+<div id="root">
+    <nav id="navbar" class="fixed w-full bg-neutral-900 text-white z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-msiedxhd">
+            <div class="flex items-center justify-between h-16" id="el-p66i20co">
+                <div class="flex items-center" id="el-35mti94b">
+                    <div class="flex-shrink-0" id="el-85rciqtr">
+                        <a href="#" class="text-xl font-bold text-emerald-500" id="el-a4rjnz9z">CareerCraft.AI</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block" id="el-r6qes6ll">
+                    <div class="ml-10 flex items-baseline space-x-4" id="el-heymmy6k">
+                        <a href="#hero" class="hover:text-emerald-500 px-3 py-2 rounded-md text-sm font-medium" id="el-rur3uler">Home</a>
+                        <a href="#features" class="hover:text-emerald-500 px-3 py-2 rounded-md text-sm font-medium" id="el-ffmdbvtk">Features</a>
+                        <a href="#resumeBuilder" class="hover:text-emerald-500 px-3 py-2 rounded-md text-sm font-medium" id="el-l98d7jms">Resume Builder</a>
+                        <a href="#careerGuidance" class="hover:text-emerald-500 px-3 py-2 rounded-md text-sm font-medium" id="el-sr28meqo">Career Guidance</a>
+                        
+                        
+                        
+                        <a href="#contact" class="hover:text-emerald-500 px-3 py-2 rounded-md text-sm font-medium" id="el-ex91vna1">Contact</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden" id="el-0vm6t4tz">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-emerald-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-arvz0gfd">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="el-4biplcye"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3" id="el-utni4970">
+                <a href="#hero" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-8syopl3g">Home</a>
+                <a href="#features" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-orjg98rw">Features</a>
+                <a href="#resumeBuilder" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-y4zqcm46">Resume Builder</a>
+                <a href="#careerGuidance" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-nev4m8qp">Career Guidance</a>
+                <a href="#jobMatch" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-9tqmhg8q">Job Match</a>
+                <a href="#testimonials" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-q09dtvvq">Testimonials</a>
+                <a href="#pricing" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-ee0dpn2t">Pricing</a>
+                <a href="#contact" class="block hover:text-emerald-500 px-3 py-2 rounded-md text-base font-medium" id="el-7jxshfe2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Add smooth scrolling to all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Change navbar background on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.getElementById('navbar').classList.add('bg-opacity-95');
+            } else {
+                document.getElementById('navbar').classList.remove('bg-opacity-95');
+            }
+        });
+    </script>
+</div>
+</htmlcode>
+              </element><element id="1aa9ff5c-98da-4bf9-967c-191e3b517427" data-section-id="1aa9ff5c-98da-4bf9-967c-191e3b517427">
+
+
+                
+                <htmlcode id="el-wo96iflt">
+<div id="root">
+    <section id="hero" class="min-h-[70vh] bg-neutral-900 text-white relative overflow-hidden" style="transform: translateY(0px); opacity: 1;">
+        <div class="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 z-0" id="el-7txlhquo"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full" id="el-ijmp5znr">
+            <div class="flex flex-col justify-center h-full pt-20 pb-12" id="el-estof153">
+                <div class="text-center lg:text-left lg:max-w-2xl animate__animated animate__fadeIn" id="el-c3171sie">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate__animated animate__fadeInUp" id="el-to18rg62">
+                        Transform Your Career Journey with
+                        <span class="text-emerald-500 block" id="el-pya6x1j4">CareerCraft.AI</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 animate__animated animate__fadeInUp animate__delay-1s" id="el-2iufvyyd">
+                        Craft your perfect resume, get personalized career guidance, and discover job opportunities tailored to your profile - all powered by AI.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate__animated animate__fadeInUp animate__delay-2s" id="el-kz89dy6g">
+                        <a href="#resumeBuilder" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 rounded-full text-white font-semibold transition-all transform hover:scale-105 text-center" id="el-n3gz0efc" style="padding: 16px 32px; background-color: rgb(16, 185, 129);">
+    Build Your Resume
+</a>
+                        <a href="#careerGuidance" class="px-8 py-4 bg-transparent border-2 border-emerald-500 rounded-full text-emerald-500 font-semibold hover:bg-emerald-500 hover:text-white transition-all transform hover:scale-105" id="el-f28agp17">
+                            Explore Career Paths
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="el-i7zuqz7f">
+            <div class="absolute w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -top-20 -right-20 animate-pulse" id="el-30udhzxt"></div>
+            <div class="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -bottom-20 -left-20 animate-pulse delay-1000" id="el-25z7pcxm"></div>
+        </div>
+
+        <!-- Stats section at the bottom -->
+        <div class="absolute bottom-0 left-0 right-0 bg-neutral-800/80 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-3s" style="height: 45px; display: flex; align-items: center;" id="el-a91upucu">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-06yhiya6">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center" id="el-wez4s8cx">
+            <div id="el-7fuia9n0">
+                <div class="text-2xl font-bold text-emerald-500" style="line-height: 1;" id="el-nkqbpfrh">10K+</div>
+                <div class="text-xs text-gray-400" style="line-height: 1;" id="el-p10mo49w">Resumes Created</div>
+            </div>
+            <div id="el-rm9ib3m5">
+                <div class="text-2xl font-bold text-emerald-500" style="line-height: 1;" id="el-t9agcqke">50+</div>
+                <div class="text-xs text-gray-400" style="line-height: 1;" id="el-e30f018h">Templates</div>
+            </div>
+            <div id="el-pi029qfc">
+                <div class="text-2xl font-bold text-emerald-500" style="line-height: 1;" id="el-4r7g8uxz">24/7</div>
+                <div class="text-xs text-gray-400" style="line-height: 1;" id="el-c1qby57q">AI Support</div>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <script>
+        // Add scroll reveal animation
+        window.addEventListener('scroll', function() {
+            const heroSection = document.getElementById('hero');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 0) {
+                heroSection.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+                heroSection.style.opacity = 1 - (scrollPosition / 700);
+            } else {
+                heroSection.style.transform = 'translateY(0)';
+                heroSection.style.opacity = 1;
+            }
+        });
+    </script>
+</div>
+</htmlcode>
+              
+              </element><element id="016cdd45-7436-4aa1-9682-3db3e178035c" data-section-id="016cdd45-7436-4aa1-9682-3db3e178035c">
+
+
+                <htmlcode id="el-g0xm2kjc">
+<div id="root">
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-1vvk8s48">
+            <div class="text-center mb-16 animate__animated animate__fadeIn" id="el-4m0yrap2">
+                <h2 class="text-4xl font-bold text-neutral-900 mb-4" id="el-jp7jsqmf">Powerful Features to Boost Your Career</h2>
+                <p class="text-lg text-gray-600" id="el-hpi6803q">Everything you need to build your professional future in one place</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="el-d3yeelxq">
+                <!-- AI Resume Builder -->
+                <div class="bg-neutral-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 animate__animated animate__fadeInUp" id="el-sxz42iww">
+                    <div class="h-14 w-14 bg-emerald-500 rounded-xl flex items-center justify-center mb-6" id="el-9gwanx34">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-rgivtcge">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" id="el-hxxm6gge"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-4" id="el-inq94ob8">AI Resume Builder</h3>
+                    <p class="text-gray-600 mb-4" id="el-g3qx53a3">Create professional resumes with our AI-powered builder. Choose from 50+ templates and get personalized suggestions.</p>
+                    <a href="#resumeBuilder" class="text-emerald-500 hover:text-emerald-600 font-semibold inline-flex items-center" id="el-n7j2drh4">
+                        Learn More
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-sjj2lbua">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" id="el-4h1zi8gl"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Career Guidance -->
+                <div class="bg-neutral-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 animate__animated animate__fadeInUp animate__delay-1s" id="el-q6txumea">
+                    <div class="h-14 w-14 bg-blue-500 rounded-xl flex items-center justify-center mb-6" id="el-ra22dnn5">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-d0pcqytb">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" id="el-pldsg1mh"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-4" id="el-rr5lqc21">Career Guidance</h3>
+                    <p class="text-gray-600 mb-4" id="el-i331wdv6">Get personalized career path recommendations and step-by-step guidance to achieve your professional goals.</p>
+                    <a href="#careerGuidance" class="text-blue-500 hover:text-blue-600 font-semibold inline-flex items-center" id="el-wilhf6r8">
+                        Learn More
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-ga1duf3s">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" id="el-r6vo4fnr"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Job Matching -->
+                
+            </div>
+
+            <!-- Additional Features -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8" id="el-bxn0prxl">
+                <div class="bg-neutral-50 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInLeft" id="el-pi4ki4ep">
+                    <h3 class="text-xl font-bold text-neutral-900 mb-4" id="el-4dzf4mkm">Why Choose CareerCraft.AI?</h3>
+                    <ul class="space-y-4" id="el-46d3qgic">
+                        <li class="flex items-center" id="el-h3h8yjho">
+                            <svg class="w-6 h-6 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-kqiqsxlq">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" id="el-8ex9yfox"></path>
+                            </svg>
+                            <span class="text-gray-600" id="el-xos2t6e4">AI-powered personalization</span>
+                        </li>
+                        <li class="flex items-center" id="el-d0h7ald2">
+                            <svg class="w-6 h-6 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-iwedef54">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" id="el-jpguptxp"></path>
+                            </svg>
+                            <span class="text-gray-600" id="el-842ws7d7">Professional templates</span>
+                        </li>
+                        <li class="flex items-center" id="el-cdyognsi">
+                            <svg class="w-6 h-6 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-1tm2ldrt">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" id="el-0ef8r0mw"></path>
+                            </svg>
+                            <span class="text-gray-600" id="el-avf1lkt0">Real-time updates and suggestions</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-neutral-50 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInRight" id="el-zfegfjdt">
+    <h3 class="text-xl font-bold text-neutral-900 mb-4" id="el-pp3x2304">Platform Statistics</h3>
+    <div class="grid grid-cols-2 gap-4" id="el-79blvqet">
+        <div class="text-center" id="el-3xq4w067">
+            <div class="text-3xl font-bold text-emerald-500" id="el-py5pssc0">98%</div>
+            <div class="text-sm text-gray-600" id="el-z0r7a1zv">User Satisfaction</div>
+        </div>
+        <div class="text-center" id="el-ag9zopn5">
+            <div class="text-3xl font-bold text-emerald-500" id="el-klz5lekf">1M+</div>
+            <div class="text-sm text-gray-600" id="el-34ervi7l">Active Users</div>
+        </div>
+        <div class="text-center mx-auto col-span-2" id="el-sfxrlpxm">
+            <div class="text-3xl font-bold text-emerald-500" id="el-91sghks7">24/7</div>
+            <div class="text-sm text-gray-600" id="el-n5wa60ds">Support Available</div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlcode>
+              </element><element id="cf8fb099-be26-495e-b48c-d00082d63867" data-section-id="cf8fb099-be26-495e-b48c-d00082d63867">
+
+<htmlCode>
+<div id="root">
+    <section id="resumeBuilder" class="py-20 bg-neutral-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-neutral-900 mb-4">Build Your Professional Resume</h2>
+                <p class="text-lg text-gray-600">Create a standout resume in minutes with our AI-powered builder</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Template Preview -->
+                <div class="animate__animated animate__fadeInLeft">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center mb-8">
+                                <h3 class="text-2xl font-bold text-emerald-500">Template Preview</h3>
+                                <div class="flex space-x-4">
+                                    <button class="template-btn active p-2 rounded-full bg-emerald-500 text-white">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>
+                                    </button>
+                                    <button class="template-btn p-2 rounded-full bg-gray-200 hover:bg-emerald-500 hover:text-white transition-all">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                                        </svg>
+                                    </button>
+                                    <button class="template-btn p-2 rounded-full bg-gray-200 hover:bg-emerald-500 hover:text-white transition-all">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-gray-100 h-96 rounded-lg flex items-center justify-center">
+                                <div class="text-center">
+                                    <p class="text-gray-500">Preview will appear here</p>
+                                    <p class="text-sm text-gray-400">Select a template to start</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resume Form -->
+                <div class="animate__animated animate__fadeInRight">
+                    <form class="bg-white p-8 rounded-2xl shadow-xl">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                    <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                    <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Professional Summary</label>
+                                <textarea rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Skills</label>
+                                <div class="flex flex-wrap gap-2" id="skillsTags">
+                                    <input type="text" placeholder="Type and press enter" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <button type="button" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all">
+                                    Save Draft
+                                </button>
+                                <button type="submit" class="px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all">
+                                    Generate Resume
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Template Carousel -->
+            <div class="mt-16 animate__animated animate__fadeInUp">
+                <h3 class="text-2xl font-bold text-neutral-900 mb-8 text-center">Choose from Premium Templates</h3>
+                <div class="flex overflow-x-auto space-x-6 pb-6 scrollbar-hide">
+                    <div class="flex-none w-72 bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer">
+                        <div class="h-48 bg-gray-100 rounded-lg mb-4"></div>
+                        <h4 class="font-semibold">Professional Modern</h4>
+                        <p class="text-sm text-gray-500">Clean and minimal design</p>
+                    </div>
+                    <div class="flex-none w-72 bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer">
+                        <div class="h-48 bg-gray-100 rounded-lg mb-4"></div>
+                        <h4 class="font-semibold">Creative Portfolio</h4>
+                        <p class="text-sm text-gray-500">Stand out with style</p>
+                    </div>
+                    <div class="flex-none w-72 bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer">
+                        <div class="h-48 bg-gray-100 rounded-lg mb-4"></div>
+                        <h4 class="font-semibold">Executive Classic</h4>
+                        <p class="text-sm text-gray-500">Traditional and trusted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Template switching
+        document.querySelectorAll('.template-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.template-btn').forEach(b => b.classList.remove('active', 'bg-emerald-500', 'text-white'));
+                document.querySelectorAll('.template-btn').forEach(b => b.classList.add('bg-gray-200'));
+                this.classList.add('active', 'bg-emerald-500', 'text-white');
+                this.classList.remove('bg-gray-200');
+            });
+        });
+
+        // Skills tags
+        const skillsInput = document.querySelector('#skillsTags input');
+        const skillsTags = document.querySelector('#skillsTags');
+
+        skillsInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && this.value) {
+                e.preventDefault();
+                const tag = document.createElement('span');
+                tag.classList.add('bg-emerald-100', 'text-emerald-800', 'px-3', 'py-1', 'rounded-full', 'text-sm', 'flex', 'items-center');
+                tag.innerHTML = `${this.value}<button class="ml-2 text-emerald-600 hover:text-emerald-800">×</button>`;
+                skillsTags.insertBefore(tag, this);
+                this.value = '';
+
+                tag.querySelector('button').addEventListener('click', function() {
+                    tag.remove();
+                });
+            }
+        });
+    </script>
+</div>
+</htmlCode></element><element id="a28a3d8b-83dc-467c-a6eb-9b2260b09224" data-section-id="a28a3d8b-83dc-467c-a6eb-9b2260b09224">
+
+
+                <htmlcode id="el-m1gp7i0f">
+<div id="root">
+    <section id="careerGuidance" class="py-20 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-wp32sz9z">
+            <div class="text-center mb-16 animate__animated animate__fadeIn" id="el-ya2uztua">
+                <h2 class="text-4xl font-bold mb-4" id="el-e84ioqmb">Personalized Career Guidance</h2>
+                <p class="text-lg text-gray-400" id="el-rl50rj7v">Get AI-powered recommendations for your career journey</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" id="el-5a7249ot">
+                <!-- Interactive Career Path Visualizer -->
+                <div class="bg-neutral-800 p-8 rounded-2xl animate__animated animate__fadeInLeft" id="el-sx2isnrs">
+                    <h3 class="text-2xl font-bold mb-6 text-emerald-500" id="el-jywfpud9">Career Path Roadmap</h3>
+                    <div class="relative" id="el-2i1xwctq">
+                        <div class="absolute left-4 h-full w-0.5 bg-emerald-500" id="el-4gcx3ngd"></div>
+                        <div class="space-y-8 relative" id="el-vjm7ckte">
+                            <div class="flex items-start" id="el-tdoz3ip0">
+                                <div class="flex items-center justify-center w-8 h-8 bg-emerald-500 rounded-full -ml-4 mr-4" id="el-e0to6i9t">1</div>
+                                <div class="bg-neutral-700 p-4 rounded-lg flex-1" id="el-t846065s">
+                                    <h4 class="font-semibold mb-2" id="el-mjlcjdcn">Skill Assessment</h4>
+                                    <p class="text-gray-400" id="el-vpnbafe6">Evaluate your current skills and identify areas for improvement</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start" id="el-p8zioihj">
+                                <div class="flex items-center justify-center w-8 h-8 bg-emerald-500 rounded-full -ml-4 mr-4" id="el-fdnb4qp9">2</div>
+                                <div class="bg-neutral-700 p-4 rounded-lg flex-1" id="el-yyuujbuu">
+                                    <h4 class="font-semibold mb-2" id="el-pl54a8za">Course Recommendations</h4>
+                                    <p class="text-gray-400" id="el-ak7dretw">Personalized learning paths based on your goals</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start" id="el-mhdvksil">
+                                <div class="flex items-center justify-center w-8 h-8 bg-emerald-500 rounded-full -ml-4 mr-4" id="el-dpat0gg1">3</div>
+                                <div class="bg-neutral-700 p-4 rounded-lg flex-1" id="el-t5cehube">
+                                    <h4 class="font-semibold mb-2" id="el-dvpa6spr">Industry Insights</h4>
+                                    <p class="text-gray-400" id="el-ki148xez">Real-time market trends and industry requirements</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Assessment Form -->
+                <div class="bg-neutral-800 p-8 rounded-2xl animate__animated animate__fadeInRight" id="el-5hmng29x">
+                    <h3 class="text-2xl font-bold mb-6 text-emerald-500" id="el-l9mkd52k">Career Assessment</h3>
+                    <form class="space-y-6" id="el-1yeuvevj">
+                        <div id="el-a02jhyh7">
+                            <label class="block text-sm font-medium mb-2" id="el-p0uusyv4">Current Industry</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-neutral-700 border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500" id="el-itvbr2pn">
+                                <option id="el-m1yxi0zm">Technology</option>
+                                <option id="el-vkramkdi">Finance</option>
+                                <option id="el-aa390gz3">Healthcare</option>
+                                <option id="el-g1b01a1d">Education</option>
+                                <option id="el-1zfuv8z5">Marketing</option>
+                            </select>
+                        </div>
+
+                        <div id="el-yolqttj3">
+                            <label class="block text-sm font-medium mb-2" id="el-7r2yi5wb">Experience Level</label>
+                            <div class="flex space-x-4" id="el-kmpk3sec">
+                                <button type="button" class="flex-1 py-2 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-600" id="el-2lry7vds">Entry</button>
+                                <button type="button" class="flex-1 py-2 px-4 rounded-lg bg-neutral-700 hover:bg-emerald-500" id="el-uyoamgj3">Mid</button>
+                                <button type="button" class="flex-1 py-2 px-4 rounded-lg bg-neutral-700 hover:bg-emerald-500" id="el-lz0y4p16">Senior</button>
+                            </div>
+                        </div>
+
+                        <div id="el-x51o1kw8">
+                            <label class="block text-sm font-medium mb-2" id="el-ump36gln">Career Goals</label>
+                            <textarea rows="3" class="w-full px-4 py-3 rounded-lg bg-neutral-700 border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500" placeholder="Describe your career aspirations..." id="el-ivkkaf0u"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 px-6 bg-emerald-500 hover:bg-emerald-600 rounded-lg font-semibold transition-all" id="el-iz0w5zk0">
+                            Get Personalized Guidance
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Course Recommendations -->
+            
+        </div>
+    </section>
+
+    <script>
+        // Experience level button toggle
+        document.querySelectorAll('[type="button"]').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('[type="button"]').forEach(btn => {
+                    btn.classList.remove('bg-emerald-500');
+                    btn.classList.add('bg-neutral-700');
+                });
+                this.classList.remove('bg-neutral-700');
+                this.classList.add('bg-emerald-500');
+            });
+        });
+    </script>
+</div>
+</htmlcode>
+              </element><element id="fe755a8d-ac27-4569-affb-fe4cb84f823f" data-section-id="fe755a8d-ac27-4569-affb-fe4cb84f823f">
+
+
+                <htmlcode id="el-rwnkj9sc">
+<div id="root">
+    
+</div>
+</htmlcode>
+              </element><element id="98d02c59-6f11-4482-bc44-128b828de5a3" data-section-id="98d02c59-6f11-4482-bc44-128b828de5a3">
+
+
+                <htmlcode id="el-nlk8u9fc">
+<div id="root">
+    
+
+    <script>
+        const slider = document.getElementById('testimonialSlider');
+        const slides = slider.children;
+        const dots = document.querySelectorAll('#testimonialDots button');
+        let currentSlide = 0;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-emerald-500', index === currentSlide);
+                dot.classList.toggle('bg-neutral-600', index !== currentSlide);
+            });
+        }
+
+        document.getElementById('prevButton').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+        });
+
+        // Auto-play
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }, 5000);
+    </script>
+</div>
+</htmlcode>
+              </element><element id="9a53a3dc-c47b-4da3-bc16-3f9d8a0c57da" data-section-id="9a53a3dc-c47b-4da3-bc16-3f9d8a0c57da">
+
+
+                <htmlcode id="el-41e6evkb">
+<div id="root">
+    
+
+    <script>
+        const pricingToggle = document.getElementById('pricing-toggle');
+        
+        pricingToggle.addEventListener('change', function() {
+            const basicPrice = document.getElementById('basic-price');
+            const proPrice = document.getElementById('pro-price');
+            const enterprisePrice = document.getElementById('enterprise-price');
+            
+            if (this.checked) {
+                // Annual prices
+                basicPrice.textContent = '$90';
+                proPrice.textContent = '$190';
+                enterprisePrice.textContent = '$490';
+            } else {
+                // Monthly prices
+                basicPrice.textContent = '$9';
+                proPrice.textContent = '$19';
+                enterprisePrice.textContent = '$49';
+            }
+        });
+    </script>
+</div>
+</htmlcode>
+              </element><element id="30515fa0-baf2-4a41-90ef-8755292e147e" data-section-id="30515fa0-baf2-4a41-90ef-8755292e147e">
+
+
+                <htmlcode id="el-akeaj5eu">
+<div id="root">
+    <section id="contact" class="py-20 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-k0kf14mc">
+            <div class="text-center mb-16 animate__animated animate__fadeIn" id="el-5gdkfe4p">
+                <h2 class="text-4xl font-bold text-white mb-4" id="el-csfc0953">Get in Touch</h2>
+                <p class="text-lg text-gray-400" id="el-zb8yxcv3">Have questions? We're here to help you succeed</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" id="el-t06ym476">
+                <!-- Contact Form -->
+                <div class="bg-neutral-800 p-8 rounded-2xl shadow-xl animate__animated animate__fadeInLeft" id="el-fk2bj81w">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="el-y6rap736">
+                            <div id="el-rlga86q7">
+                                <label class="block text-sm font-medium text-gray-300 mb-2" id="el-wxfj5gbp">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-neutral-700 border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 text-white" required="" id="el-d2e62sfe">
+                            </div>
+                            <div id="el-zeb3ybul">
+                                <label class="block text-sm font-medium text-gray-300 mb-2" id="el-a6q61idi">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-neutral-700 border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 text-white" required="" id="el-qooko1qi">
+                            </div>
+                        </div>
+
+                        <div id="el-y75gewwe">
+                            <label class="block text-sm font-medium text-gray-300 mb-2" id="el-mo6qtxqw">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-neutral-700 border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 text-white" required="" id="el-75muo1g7">
+                        </div>
+
+                        <div id="el-xo4jhvn3">
+                            <label class="block text-sm font-medium text-gray-300 mb-2" id="el-o8syw4kq">Subject</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-neutral-700 border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 text-white" id="el-9ub9bbi8">
+                                <option id="el-rjo0kx6t">General Inquiry</option>
+                                <option id="el-dvicq5da">Technical Support</option>
+                                <option id="el-xsy2b3ii">Career Guidance</option>
+                                <option id="el-rg1txc2o">Pricing Questions</option>
+                                <option id="el-atoyxc2i">Partnership Opportunities</option>
+                            </select>
+                        </div>
+
+                        <div id="el-qhol9krm">
+                            <label class="block text-sm font-medium text-gray-300 mb-2" id="el-q2e2qal9">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-neutral-700 border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 text-white" required="" id="el-37eehywz"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all" id="el-ygw9xa37">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8 animate__animated animate__fadeInRight" id="el-jqhifb7l">
+                    <div class="bg-neutral-800 p-8 rounded-2xl shadow-xl" id="el-b4hm1rel">
+                        <h3 class="text-2xl font-bold text-white mb-6" id="el-dzc89raa">Contact Information</h3>
+                        <div class="space-y-6" id="el-eupsgqce">
+                            <div class="flex items-start" id="el-g84zy3px">
+                                <div class="flex-shrink-0" id="el-xojflfzb">
+                                    <svg class="w-6 h-6 text-emerald-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-az382tmr">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" id="el-fukc6a3f"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-4" id="el-px6zs5fw">
+                                    <p class="text-white font-medium" id="el-yponjqr4">Email</p>
+                                    <a href="mailto:support@careercraft.ai" class="text-gray-400 hover:text-emerald-500" id="el-f6be71gm">support@careercraft.ai</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start" id="el-ccue77ac">
+                                <div class="flex-shrink-0" id="el-1rpirh0r">
+                                    <svg class="w-6 h-6 text-emerald-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-hszfkogc">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" id="el-l42r7hya"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-4" id="el-ufpdjhy3">
+                                    <p class="text-white font-medium" id="el-f1x868mk">Phone</p>
+                                    <a href="tel:7020330854" class="text-gray-400 hover:text-emerald-500" id="el-kibw9kca">(+91) 7020330854</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-800 p-8 rounded-2xl shadow-xl" id="el-degq5tfn">
+                        <h3 class="text-2xl font-bold text-white mb-6" id="el-ntzptz42">FAQ</h3>
+                        <div class="space-y-4" id="el-io3b3swb">
+                            <div class="border-b border-neutral-700 pb-4" id="el-ndcjj5ar">
+                                <button class="faq-toggle flex justify-between items-center w-full text-left" id="el-g5vklwtp">
+                                    <span class="text-white font-medium" id="el-htx88zyz">How does the AI resume builder work?</span>
+                                    <svg class="w-5 h-5 text-emerald-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-7rew2ml1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" id="el-sv7vk4vi"></path>
+                                    </svg>
+                                </button>
+                                <div class="faq-content hidden mt-2 text-gray-400" id="el-cgiixm8r">
+                                    Our AI analyzes your input and creates optimized resumes using industry best practices and tailored templates.
+                                </div>
+                            </div>
+                            <div class="border-b border-neutral-700 pb-4" id="el-jxyu3bw7">
+                                <button class="faq-toggle flex justify-between items-center w-full text-left" id="el-dul6cdfx">
+                                    <span class="text-white font-medium" id="el-fjlha1w4">Can I unsubscribe anytime?</span>
+                                    <svg class="w-5 h-5 text-emerald-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-8zec5rt0">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" id="el-l8av5o87"></path>
+                                    </svg>
+                                </button>
+                                <div class="faq-content hidden mt-2 text-gray-400" id="el-7esb3bo6">
+                                    Yes, you can cancel your subscription at any time with no questions asked.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add form submission logic here
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+
+        // FAQ toggles
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const arrow = this.querySelector('svg');
+                
+                content.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</div>
+</htmlcode>
+              </element><element id="6c4df4bf-7bfd-4eb0-aa6c-ea37e29877d4" data-section-id="6c4df4bf-7bfd-4eb0-aa6c-ea37e29877d4">
+
+
+                <htmlcode id="el-uupy9lxq">
+<div id="root">
+    <section id="footer" class="bg-neutral-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-zlgorlcl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="el-toxe2n5r">
+                <div class="space-y-4" id="el-r7h6x0s4">
+                    <h3 class="text-xl font-bold" id="el-iagy7uvq">CareerCraft.AI</h3>
+                    <p class="text-neutral-400 text-sm" id="el-upbcl97g">Empowering careers through AI-driven guidance and professional development solutions.</p>
+                    <div class="flex space-x-4" id="el-6d9x8aag">
+                        <a href="#" class="text-neutral-400 hover:text-white" id="el-w6vdyz4a">
+                            <span class="sr-only" id="el-jd5bhnzp">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" id="el-ncqvp9yp"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" id="el-y6v75xua"></path></svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white" id="el-hzwnwbrw">
+                            <span class="sr-only" id="el-hdr82u5q">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" id="el-ztrwao6q"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" id="el-zkza501e"></path></svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white" id="el-fmu804lr">
+                            <span class="sr-only" id="el-zszju1ng">LinkedIn</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" id="el-pvjrpcxr"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" id="el-mr9dx0xg"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="space-y-4" id="el-kgx6vwkt">
+                    <h3 class="text-lg font-semibold" id="el-zdp4rcxa">Features</h3>
+                    <ul class="space-y-2 text-neutral-400" id="el-d8qlawwm">
+                        <li id="el-im4erhmc"><a href="#" class="hover:text-white" id="el-2svkt90x">AI Resume Builder</a></li>
+                        <li id="el-mdft51i3"><a href="#" class="hover:text-white" id="el-5y35guon">Career Guidance</a></li>
+                        <li id="el-i6olt5v8"></li>
+                        <li id="el-jzzszmvr"></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-4" id="el-xqrlhj75">
+                    <h3 class="text-lg font-semibold" id="el-5kfmhnxd">Company</h3>
+                    <ul class="space-y-2 text-neutral-400" id="el-ad5bxxmm">
+                        <li id="el-i4fxhaey"><a href="#" class="hover:text-white" id="el-g4sspv9t">About Us</a></li>
+                        <li id="el-tv4byovq"><a href="#" class="hover:text-white" id="el-24gghq6d">Contact</a></li>
+                        <li id="el-938mgggg"><a href="#" class="hover:text-white" id="el-riggw0i9">Privacy Policy</a></li>
+                        <li id="el-xnxu7mfs"><a href="#" class="hover:text-white" id="el-bo0snna7">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-4" id="el-u50taj4e">
+                    <h3 class="text-lg font-semibold" id="el-k3yhn0by">Newsletter</h3>
+                    <p class="text-neutral-400 text-sm" id="el-mq2bzdub">Stay updated with career opportunities and tips.</p>
+                    <form class="flex flex-col space-y-2" id="el-8d212vdi">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-2 bg-neutral-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="el-vwzlzxwg">
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300" id="el-3sjdreq6">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-neutral-800" id="el-loiszkxd">
+                <p class="text-center text-neutral-400 text-sm" id="el-6410yf03">© 2024 CareerCraft.AI. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlcode>
+              </element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+
+            <script>// Resume Form Submission
+                document.querySelector("#resumeForm").addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    
+                    const formData = {
+                        user_id: 1,  // Replace with dynamic user ID
+                        name: document.querySelector("#name").value,
+                        email: document.querySelector("#email").value,
+                        summary: document.querySelector("#summary").value,
+                        skills: document.querySelector("#skills").value.split(","),
+                        experience: document.querySelector("#experience").value.split("\n"),
+                    };
+                
+                    const response = await fetch("/api/resume", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData),
+                    });
+                
+                    const data = await response.json();
+                    alert(data.message);
+                });
+                
+                // Career Assessment Submission
+                document.querySelector("#careerForm").addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    
+                    const formData = {
+                        industry: document.querySelector("#industry").value,
+                        experience_level: document.querySelector("#experience_level").value,
+                        goals: document.querySelector("#goals").value,
+                    };
+                
+                    const response = await fetch("/api/career-assessment", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData),
+                    });
+                
+                    const data = await response.json();
+                    document.querySelector("#careerResults").innerHTML = JSON.stringify(data, null, 2);
+                });
+                
+                // Contact Form Submission
+                document.querySelector("#contactForm").addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    
+                    const formData = {
+                        name: document.querySelector("#contactName").value,
+                        email: document.querySelector("#contactEmail").value,
+                        subject: document.querySelector("#contactSubject").value,
+                        message: document.querySelector("#contactMessage").value,
+                    };
+                
+                    const response = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData),
+                    });
+                
+                    const data = await response.json();
+                    alert(data.message);
+                });
+                </script>
+                
+            </body>
+            </html>
+          
